@@ -12,8 +12,6 @@ function login() {
     const { user, setUser } = context
 
     const userLogin = async (e) => {
-
-        console.log(user)
         e.preventDefault()
         console.log(email, password)
         const res = await fetch(`${baseUrl}/api/login`, {
@@ -30,10 +28,10 @@ function login() {
         const res2 = await res.json()
 
         if (res2.error) {
-            console.log(res2.error)
+            alert(res2.error)
         }
         else {
-            console.log(res2)
+            alert(res2)
             // Cookies.set('token', res2.token)
             // Cookies.set('user', JSON.stringify(res2.user))
 

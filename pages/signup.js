@@ -10,12 +10,12 @@ function signup() {
     const userSignup = async (e) => {
         e.preventDefault()
 
-        const res = await fetch(`${baseUrl}/api/signup`,{
-            method : 'POST',
-            headers:{
-                'Content-Type':'application/json'
+        const res = await fetch(`${baseUrl}/api/signup`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
                 name,
                 email,
                 password
@@ -23,10 +23,10 @@ function signup() {
         })
         const res2 = await res.json()
 
-        if(res2.error){
+        if (res2.error) {
             console.log(res2.error)
         }
-        else{
+        else {
             console.log(res2)
 
         }
